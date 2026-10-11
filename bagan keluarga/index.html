@@ -1,0 +1,287 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>私の家族 - Keluarga Saya</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 25px 12px;
+  background: #f3f6fb;
+  color: #243449;
+  font-family: Arial, "Noto Sans JP", sans-serif;
+}
+
+h1 {
+  text-align: center;
+  margin: 0 0 5px;
+  font-size: 28px;
+}
+
+.subtitle {
+  text-align: center;
+  color: #64748b;
+  margin-bottom: 25px;
+}
+
+.diagram {
+  position: relative;
+  width: 100%;
+  max-width: 780px;
+  aspect-ratio: 780 / 510;
+  margin: auto;
+  background: white;
+  border-radius: 18px;
+  box-shadow: 0 5px 20px #0000000d;
+  overflow: hidden;
+}
+
+.connections {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.person {
+  position: absolute;
+  z-index: 2;
+  width: 21%;
+  height: 38%;
+  border: 2px solid;
+  border-radius: 13px;
+  overflow: hidden;
+  text-align: center;   
+  box-shadow: 0 3px 8px #00000012;
+}
+
+
+.person img {
+  display: block;
+  width: 100%;
+  height: 125px;
+  object-fit: contain;
+  object-position: center;
+  background: #f1f3f6;
+}
+
+
+
+.info {
+  padding: 5px 2px;
+}
+
+
+.jp {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.hira {
+  font-size: 12px;
+}
+
+.romaji {
+  font-size: 13px;
+  font-style: italic;
+  margin: 2px 0;
+}
+
+.meaning {
+  font-size: 10px;
+  line-height: 1.4;
+}
+
+
+.mother {
+  left: 15%;
+  top: 4%;
+  border-color: #f05298;
+  background: #ffe1ef;
+}
+
+.father {
+  left: 64%;
+  top: 4%;
+  border-color: #398ff0;
+  background: #dcecff;
+}
+
+.me {
+  left: 4%;
+  top: 62%;
+  border-color: #2fba70;
+  background: #dcf9e3;
+}
+
+.brother2 {
+  left: 39.5%;
+  top: 62%;
+  border-color: #398ff0;
+  background: #dcecff;
+}
+
+.brother3 {
+  left: 75%;
+  top: 62%;
+  border-color: #398ff0;
+  background: #dcecff;
+}
+
+.legend {
+  max-width: 780px;
+  margin: 15px auto;
+  padding: 12px 16px;
+  background: white;
+  border-radius: 12px;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.line-label {
+  font-weight: bold;
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 15px 5px;
+  }
+
+  .legend {
+    font-size: 11px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<h1>私の家族</h1>
+<p class="subtitle">Watashi no kazoku — Keluarga Saya</p>
+
+<div class="diagram">
+
+  <!-- Garis hubungan dibuat dengan koordinat SVG.
+       Garis merah muda = hubungan ibu.
+       Garis biru = hubungan ayah tiri. -->
+
+ 
+<svg class="connections"
+     viewBox="0 0 780 510"
+     preserveAspectRatio="none"
+     aria-label="Bagan hubungan keluarga">
+
+  <!-- Ibu dan ayah tiri terhubung sebagai orang tua adik -->
+  <path d="M 199 214 V 240 H 581 V 214"
+        fill="none"
+        stroke="#34404c"
+        stroke-width="3"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+
+  <!-- Garis orang tua bersama menuju kedua adik -->
+  <path d="M 390 240 V 275 H 667 V 316
+           M 390 275 V 316"
+        fill="none"
+        stroke="#34404c"
+        stroke-width="3"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+
+  <!-- Kamu hanya terhubung ke ibu -->
+  <path d="M 150 214 V 285 H 113 V 316"
+        fill="none"
+        stroke="#e94d91"
+        stroke-width="3"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+
+</svg>
+
+
+  <!-- IBU -->
+  <div class="person mother">
+    <img src="mom.jpg" alt="Ibu">
+    <div class="info">
+      <div class="jp">母</div>
+      <div class="hira">はは</div>
+      <div class="romaji">Haha</div>
+      <div class="meaning">Ibu</div>
+    </div>
+  </div>
+
+  <!-- AYAH TIRI -->
+  <div class="person father">
+    <img src="ayah.jpg" alt="Ayah tiri">
+    <div class="info">
+      <div class="jp">義父</div>
+      <div class="hira">ぎふ</div>
+      <div class="romaji">Gifu</div>
+      <div class="meaning">Ayah tiri</div>
+    </div>
+  </div>
+
+  <!-- ANAK PERTAMA: KAMU -->
+  <div class="person me">
+    <img src="img.jpg" alt="Saya">
+    <div class="info">
+      <div class="jp">私</div>
+      <div class="hira">わたし</div>
+      <div class="romaji">Watashi</div>
+      <div class="meaning">
+        長男（ちょうなん）<br>
+        Chōnan<br>
+        Anak laki-laki pertama
+      </div>
+    </div>
+  </div>
+
+  <!-- ANAK KEDUA -->
+  <div class="person brother2">
+    <img src="adik1.jpg" alt="Adik laki-laki pertama">
+    <div class="info">
+      <div class="jp">弟</div>
+      <div class="hira">おとうと</div>
+      <div class="romaji">Otōto</div>
+      <div class="meaning">
+        次男（じなん）<br>
+        Jinan<br>
+        Anak laki-laki kedua
+      </div>
+    </div>
+  </div>
+
+  <!-- ANAK KETIGA -->
+  <div class="person brother3">
+    <img src="adik2.jpg" alt="Adik laki-laki kedua">
+    <div class="info">
+      <div class="jp">弟</div>
+      <div class="hira">おとうと</div>
+      <div class="romaji">Otōto</div>
+      <div class="meaning">
+        三男（さんなん）<br>
+        Sannan<br>
+        Anak laki-laki ketiga
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="legend">
+  <span class="line-label" style="color:#e94d91">━ Garis Merah muda:</span>
+  Hubungan sedarah antara Ibu dengan ketiga anak.<br>
+  <span class="line-label" style="color:#000000">━ Garis Hitam:</span>
+  Hubungan sedarah antara Ayah tiri dengan kedua adik.
+</div>
+
+</body>
+</html>
